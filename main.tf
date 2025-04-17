@@ -1,7 +1,7 @@
 resource "aws_instance" "web" {
   ami                    = "ami-06c4be2792f419b7b"      #change ami id for different region
-  instance_type          = "t2.small"
-  key_name               = "keypair"              #change key name as per your setup
+  instance_type          = "t3.small"
+  key_name               = "DevOps"              #change key name as per your setup
   vpc_security_group_ids = [aws_security_group.Jenkins-VM-SG.id]
   #subnet_id              = "subnet-0279333d80ef56ff8"
   user_data              = templatefile("./install.sh", {})
